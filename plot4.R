@@ -36,19 +36,19 @@ with(data, {
         lines(DateTime, Voltage)
         
         #Make third plot
-        ylimits <- with(data, range(c(Sub_metering_1,Sub_metering_2,Sub_metering_3)))
-        with(data, plot(DateTime, Sub_metering_1, type = "n", 
-                        axes = FALSE, xlab = "", ylab = "", ylim = ylimits))
-        lines(data$DateTime, data$Sub_metering_1, col="black")
+        ylimits <- range(c(Sub_metering_1,Sub_metering_2,Sub_metering_3))
+        plot(DateTime, Sub_metering_1, type = "n", 
+                 axes = FALSE, xlab = "", ylab = "", ylim = ylimits)
+        lines(DateTime, Sub_metering_1, col="black")
         par(new=TRUE) #similar to 'hold on' in MATLAB
-        with(data, plot(DateTime, Sub_metering_2, type = "n", 
-                        axes = FALSE, xlab = "", ylab = "", ylim = ylimits))
-        lines(data$DateTime, data$Sub_metering_2, col="red")
+        plot(DateTime, Sub_metering_2, type = "n", 
+                axes = FALSE, xlab = "", ylab = "", ylim = ylimits)
+        lines(DateTime, Sub_metering_2, col="red")
         par(new=TRUE)
-        with(data, plot(DateTime, Sub_metering_3, type = "n", 
-                        ylim = ylimits,
-                        ylab = "Energy sub metering", xlab = ""))
-        lines(data$DateTime, data$Sub_metering_3, col="blue")
+        plot(DateTime, Sub_metering_3, type = "n", 
+                ylim = ylimits,
+                ylab = "Energy sub metering", xlab = "")
+        lines(DateTime, Sub_metering_3, col="blue")
         legend("topright", # places a legend at the appropriate place 
                legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), # puts text in the legend 
                lty=c(1,1,1), # gives the legend appropriate symbols (lines)
